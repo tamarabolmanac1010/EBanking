@@ -25,4 +25,6 @@ Route::get('/pay', function () {
 
 Route::post('/pay/submit', 'PayingController@submit');
 
+Route::get('/acTypes', 'PayingController@getAccountTypes');
+
 
