@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\AccountType;
+use App\Korisnik;
 
 class PayingController extends Controller
 {
@@ -12,9 +13,8 @@ class PayingController extends Controller
             'amount' => 'required',
             'account' => 'required'
         ]);
-
-        return redirect('/home')->with('success', 'Payment is executed successfully');
-
+        return Korisnik::all();
+        //return redirect('/home')->with('success', 'Payment is executed successfully');
     }
 
     public function getAccountTypes() {

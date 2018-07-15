@@ -23,8 +23,14 @@ Route::get('/pay', function () {
     return view('pay');
 });
 
+Route::get('', function () {
+    return view('auth/login');
+});
+
 Route::post('/pay/submit', 'PayingController@submit');
 
 Route::get('/acTypes', 'PayingController@getAccountTypes');
 
+Auth::routes();
 
+Route::get('/home', 'HomeController@index')->name('home');
