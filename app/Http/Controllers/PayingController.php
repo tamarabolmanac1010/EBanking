@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\AccountType;
+use App\Accounttype;
 use App\Korisnik;
+use App\Account;
+use App\User;
 
 class PayingController extends Controller
 {
@@ -13,7 +15,13 @@ class PayingController extends Controller
             'amount' => 'required',
             'account' => 'required'
         ]);
-        return Korisnik::all();
+       // return Account::all();
+        $acc = User::find(1)->accounts;
+        return $acc;
+        /*
+        foreach ($comments as $comment) {
+            //
+        }*/
         //return redirect('/home')->with('success', 'Payment is executed successfully');
     }
 

@@ -34,3 +34,4 @@ Route::get('/acTypes', 'PayingController@getAccountTypes');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+

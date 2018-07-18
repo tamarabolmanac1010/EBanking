@@ -1,6 +1,30 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
+    <style>
+        #accounts {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #accountsv td, #accounts th {
+
+            padding: 8px;
+        }
+
+        #accounts tr:nth-child(even){background-color: #f2f2f2;}
+
+        #accounts tr:hover {background-color: #ddd;}
+
+        #accounts th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #fff;
+            color: #000000;
+        }
+    </style>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,6 +43,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!-- Latest compiled and minified CSS -->
+    <link href="{{ asset('css/bootstrap-table.css') }}" rel="stylesheet">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.js"></script>
+
 </head>
 <body>
     <div id="app">
