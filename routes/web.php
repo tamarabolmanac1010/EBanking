@@ -15,9 +15,7 @@ Route::get('/home', function () {
     return view('home');
 });
 
-Route::get('/transactions', function () {
-    return view('transactions');
-});
+Route::get('/transactions', 'TransactionController@index');
 
 Route::get('/pay', function () {
     return view('pay');
@@ -28,6 +26,8 @@ Route::get('', function () {
 });
 
 Route::post('/pay/submit', 'PayingController@submit');
+
+Route::post('/transactions/submit', 'TransactionController@submit');
 
 Route::get('/acTypes', 'PayingController@getAccountTypes');
 

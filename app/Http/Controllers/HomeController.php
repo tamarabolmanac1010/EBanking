@@ -24,10 +24,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-
-        //$user = Auth::user();
-        //return $user;
-        //Session::set('user', $value);
         return view('home');
     }
 }
