@@ -4,29 +4,49 @@
     <h1> Transactions </h1>
 
     <br>
-    <?php echo e(Form::open(array('url' => 'transactions/submit'))); ?>
+    <?php echo (Form::open(array('url' => 'submit')));
 
-    {!! Form::select('ACCNUMBER', (['0' => 'Select account '] + array($accounts)), null, ['class' => 'form-control'] ) !!}
-    <br>
+        $accArray = array();
+        foreach ($accounts as $account){
+            $accArray[$account->ACCNUMBER] = $account;
+        }?>
+
+        {!! Form::select('account',   array_merge(['' => 'Select account'], $accArray), null , ['class' => 'form-control']) !!} <br>
+        {!! Form::select('month',   array_merge(['' => 'Select period',
+                                            '1' => 'Past month',
+                                            '2' => 'Past two months',
+                                            '3' => 'Past three months']), null , ['class' => 'form-control']) !!}
+         <br>
          <div>
             {{Form::submit('Show transactions', ['class' => 'btn btn-primary'])}}
+             <br>
          </div>
+    <br>
+    <?php echo e(Form::close());?>
 
-    @foreach($accounts as $account)
+    <?php if(!empty($transactions)) {?>
+        <table data-toggle="table" id="accounts">
+            <thead>
+            <tr>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php
+            foreach ($transactions as $transaction) {?>
+                <tr>
+                    <td><?php echo $transaction->DATE; ?></td>
+                    <td><?php echo $transaction->TRANSACTIONAMOUNT." EUR"; ?></td>
+                    <td><?php echo $transaction->DESCRIPTION; ?></td>
+                    <td><?php echo $transaction->TRANSACTIONTYPE; ?></td>
+                </tr>
+        <?php } ?>
+        <?php } ?>
+    </tbody>
+    </table>
 
-            {!! Form::select('account',  array($account->ACCNUMBER => "Account type:  ".$account->accounttype()->TYPE."
-Number:   ".$account->ACCNUMBER), null ) !!}
-
-    @endforeach
-
-    <?php echo e(Form::close());
-
-    if(!empty($transactions))
-        foreach ($transactions as $transaction) {
-        ?>
-            <?php echo $transaction->DESCRIPTION."     Amount: ".$transaction->TRANSACTIONAMOUNT."     Type: ".$transaction->TRANSACTIONTYPE ?><br>
-        <?php
-        }
-        ?>
 
 @endsection
