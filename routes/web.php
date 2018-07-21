@@ -17,15 +17,13 @@ Route::get('home', function () {
 
 Route::get('transactions', 'TransactionController@index');
 
-Route::get('/pay', function () {
-    return view('pay');
-});
+Route::get('pay', 'PayingController@index');
 
 Route::get('', function () {
     return view('auth/login');
 });
 
-Route::post('/pay/submit', 'PayingController@submit');
+Route::post('payment', 'PayingController@payment');
 
 Route::post('submit', 'TransactionController@submit');
 

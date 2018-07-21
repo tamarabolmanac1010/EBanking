@@ -11,11 +11,11 @@
             $accArray[$account->ACCNUMBER] = $account;
         }?>
 
-        {!! Form::select('account',   array_merge(['' => 'Select account'], $accArray), null , ['class' => 'form-control']) !!} <br>
-        {!! Form::select('month',   array_merge(['' => 'Select period',
+        {!! Form::select('account',    $accArray, null , ['class' => 'form-control', 'placeholder'=>' Select account ']) !!} <br>
+        {!! Form::select('month',   array_merge([
                                             '1' => 'Past month',
                                             '2' => 'Past two months',
-                                            '3' => 'Past three months']), null , ['class' => 'form-control']) !!}
+                                            '3' => 'Past three months']), null , ['class' => 'form-control', 'placeholder'=>' Select month '] ) !!}
          <br>
          <div>
             {{Form::submit('Show transactions', ['class' => 'btn btn-primary'])}}
@@ -25,6 +25,7 @@
     <?php echo e(Form::close());?>
 
     <?php if(!empty($transactions)) {?>
+    <?php echo "Current time ".$current; ?>
         <table data-toggle="table" id="accounts">
             <thead>
             <tr>

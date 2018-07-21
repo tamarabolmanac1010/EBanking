@@ -22,7 +22,7 @@ class TransactionController extends Controller
 
     public function create()
     {
-        //
+        //te
     }
 
     public function store(Request $request)
@@ -52,16 +52,18 @@ class TransactionController extends Controller
 
     public function submit(Request $request){
         $account = Input::get('account');
-        $month= Input::get('account');
+        $month= Input::get('month');
 
-        $current = Carbon::now();
-        $from = $current->subDays(30);
+        $month++;
+
+        $current = Carbon::now()->toDateString();
+        $from = Carbon::now()->subMonth($month)->toDateString();
 
         $transactions = Transaction::where('ACCNUMBER',$account)
-                                 //    ->whereBetween('DATE', [$from, $current])
+                                    ->whereBetween('DATE', [$from, $current])
                                      ->get();
 
         $accounts =  Account::all();
-        return view('transactions')->with('transactions', $transactions)->with('accounts', $accounts);
+        return view('transactions')->with('transactions', $transactions)->with('accounts', $accounts)->with('current', $month);
     }
 }
