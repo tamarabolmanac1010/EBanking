@@ -11,17 +11,29 @@
 |
 */
 
-Route::get('home', function () {
-    return view('home');
+
+
+Route::get('homeAdmin', function () {
+    return view('homeAdmin');
 });
 
 Route::get('transactions', 'TransactionController@index');
 
 Route::get('pay', 'PayingController@index');
 
+Route::get('add', 'AdminController@addUser');
+
+Route::get('users', 'AdminController@users');
+
+Route::get('newNotification', 'NotificationController@newNotification');
+
 Route::get('', function () {
     return view('auth/login');
 });
+
+Route::get('/admin', 'AdminController@admin')
+    ->middleware('is_admin')
+    ->name('admin');
 
 Route::post('payment', 'PayingController@payment');
 
@@ -32,4 +44,8 @@ Route::get('/acTypes', 'PayingController@getAccountTypes');
 Auth::routes();
 
 Route::get('home', 'HomeController@index')->name('home');
+
+Route::get('test',function () {
+    return view('test');
+});
 

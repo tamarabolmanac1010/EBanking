@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use Illuminate\Contracts\Auth\Guard;
+
 class HomeController extends Controller
 {
     /**
@@ -24,6 +26,11 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $user = app('Illuminate\Contracts\Auth\Guard')->user();
+        $name = $user->name;
+        if($name === 'admin'){
+            return view('homeAdmin');
+        }
         return view('home');
     }
 }

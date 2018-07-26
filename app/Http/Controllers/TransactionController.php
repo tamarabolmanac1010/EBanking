@@ -11,18 +11,21 @@ use App\Account;
 use DateTime;
 use Carbon\Carbon;
 
+use Illuminate\Support\Facades\Auth;
+
 class TransactionController extends Controller
 {
 
     public function index()
     {
-        $accounts =  Account::all();
+        $id = Auth::user()->id;
+        $accounts = Account::where('USER_ID',$id)->get();
         return view('transactions')->with('accounts', $accounts);
     }
 
     public function create()
     {
-        //te
+        //
     }
 
     public function store(Request $request)

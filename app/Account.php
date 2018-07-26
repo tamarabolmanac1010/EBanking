@@ -7,6 +7,13 @@ use App\Accounttype;
 
 class Account extends Model
 {
+
+    public $timestamps = false;
+
+    protected $fillable = [
+        'ACCNUMBER', 'ACTYPEID', 'AMOUNT', 'USER_ID',
+    ];
+
     public function accounttype() {
         return  Accounttype::where('ACTYPEID',$this->ACTYPEID)->first() ;
     }

@@ -6,21 +6,18 @@
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-            <li class="{{Request::is('home') ? 'active' : ''}}">
-                <a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
+            <li class="{{Request::is('homeAdmin') ? 'active' : ''}}">
+                <a class="nav-link" href="homeAdmin">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li  class="{{Request::is('transactions') ? 'active' : ''}}">
-                <a class="nav-link" href="transactions">Transactions</a>
-            </li>
-            <li  class="{{Request::is('pay') ? 'active' : ''}}">
-                <a class="nav-link disabled" href="/pay">Payments</a>
+            <li  class="{{Request::is('add') ? 'active' : ''}}">
+                <a class="nav-link disabled" href="/add">Add user</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Accounts</a>
+                <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Information</a>
                 <div class="dropdown-menu" aria-labelledby="dropdown01">
-                    <a class="dropdown-item" href="/homr">something </a>
-                    <a class="dropdown-item" href="/transactions">something</a>
-                    <a class="dropdown-item" href="/pay">something</a>
+                    <a class="dropdown-item" href="/newNotification">New notification </a>
+                    <a class="dropdown-item" href="/transactions">Sent notifications</a>
+                    <a class="dropdown-item" href="/users">Users data</a>
                 </div>
             </li>
         </ul>
@@ -32,7 +29,7 @@
             <!-- Authentication Links -->
             @guest
             <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
-
+            <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
             @else
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

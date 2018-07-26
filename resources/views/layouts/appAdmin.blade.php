@@ -51,13 +51,13 @@
 </head>
 <body>
 
-    <div id="app">
-        @include('inc.navbar')
-        <div class="container">
-            <main class="py-4">
-                @yield('content')
-            </main>
-        </div>
+<div id="app">
+    @include('inc.navbarAdmin')
+    <div class="container">
+        <main class="py-4">
+            @yield('content')
+        </main>
     </div>
+</div>
 </body>
 </html>

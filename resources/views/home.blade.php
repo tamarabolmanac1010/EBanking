@@ -49,3 +49,7 @@
     </div>
 </div>
 @endsection
+
+@section('sidebar')
+
+@endsection
