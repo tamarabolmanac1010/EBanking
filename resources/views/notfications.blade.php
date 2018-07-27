@@ -1,4 +1,4 @@
-@extends('layouts.appAdmin')
+@extends('layouts.app')
 @section('content')
 
     <h1> Notifications </h1>

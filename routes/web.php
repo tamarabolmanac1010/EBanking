@@ -13,7 +13,7 @@
 
 
 
-Route::get('homeAdmin', function () {
+Route::get('/homeAdmin', function () {
     return view('homeAdmin');
 });
 
@@ -30,6 +30,12 @@ Route::get('newNotification', 'NotificationController@newNotification');
 Route::post('notification', 'NotificationController@createNotification');
 
 Route::get('notifications', 'NotificationController@userNotifications');
+
+Route::get('edit/{id}', 'UserController@editProfile');
+
+Route::get('view/{id}', 'UserController@viewProfile');
+
+Route::post('saveChanges', 'UserController@saveChanges');
 
 Route::get('', function () {
     return view('auth/login');

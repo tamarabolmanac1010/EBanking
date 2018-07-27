@@ -35,8 +35,7 @@
                         </li>
                     </ul>
                      <div class="card-body">
-                         <a href="#" class="card-link">Edit profile</a>
-
+                         <a href="edit/" class="card-link">Edit profile</a>
                     </div>
                     @if (session('status'))
                         <div class="alert alert-success">

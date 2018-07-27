@@ -20,7 +20,7 @@
         <tr>
             <td><?php echo $user->name; ?></td>
             <td><?php echo $user->email ?></td>
-            <td><?php echo ">>" ?></td>
+            <td> <a href="{{ url('view/'.$user->id) }}" class="card-link">>></a> </td>
         </tr>
         <?php } ?>
         <?php } ?>
