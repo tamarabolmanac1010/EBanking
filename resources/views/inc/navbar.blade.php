@@ -15,13 +15,8 @@
             <li  class="{{Request::is('pay') ? 'active' : ''}}">
                 <a class="nav-link disabled" href="/pay">Payments</a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Accounts</a>
-                <div class="dropdown-menu" aria-labelledby="dropdown01">
-                    <a class="dropdown-item" href="/homr">something </a>
-                    <a class="dropdown-item" href="/transactions">something</a>
-                    <a class="dropdown-item" href="/pay">something</a>
-                </div>
+            <li  class="{{Request::is('notifications') ? 'active' : ''}}">
+                <a class="nav-link disabled" href="/notifications">Notifications</a>
             </li>
         </ul>
 

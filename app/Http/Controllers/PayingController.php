@@ -5,9 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
 use App\Accounttype;
-use App\Korisnik;
 use App\Account;
-use App\User;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;

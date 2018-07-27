@@ -27,6 +27,10 @@ Route::get('users', 'AdminController@users');
 
 Route::get('newNotification', 'NotificationController@newNotification');
 
+Route::post('notification', 'NotificationController@createNotification');
+
+Route::get('notifications', 'NotificationController@userNotifications');
+
 Route::get('', function () {
     return view('auth/login');
 });

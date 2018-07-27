@@ -3,7 +3,14 @@
 
     <h1> Write notification </h1>
     <br>
-    <?php echo e(Form::open(array('url' => 'notification')));?>
+    <?php echo (Form::open(array('url' => 'notification')))?>
+    <?php
+        $accArray = array();
+        foreach ($accounts as $account){
+            $accArray[$account->ACCNUMBER] = $account;
+        }?>
+
+    {!! Form::select('account',    $accArray, null , ['class' => 'form-control', 'placeholder'=>' Select account ']) !!} <br>
 
     <div class="form-group">
         <?php echo e(Form::label('title', 'Title')); ?>
