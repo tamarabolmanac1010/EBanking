@@ -7,16 +7,18 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
             <li class="{{Request::is('home') ? 'active' : ''}}">
-                <a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li  class="{{Request::is('transactions') ? 'active' : ''}}">
-                <a class="nav-link" href="transactions">Transactions</a>
+                <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
             </li>
             <li  class="{{Request::is('pay') ? 'active' : ''}}">
                 <a class="nav-link disabled" href="/pay">Payments</a>
             </li>
-            <li  class="{{Request::is('notifications') ? 'active' : ''}}">
-                <a class="nav-link disabled" href="/notifications">Notifications</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Transactions</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown01">
+                    <a class="dropdown-item" href="/transactions">All transactions </a>
+                    <a class="dropdown-item" href="/transfer">Transfer amount</a>
+                    <a class="dropdown-item" href="/shift">Shift amount</a>
+                </div>
             </li>
         </ul>
 

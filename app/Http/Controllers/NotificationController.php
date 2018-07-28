@@ -39,12 +39,14 @@ class NotificationController extends Controller
         return redirect('/home')->with('success', 'Notification sent');
     }
 
-    public function userNotifications() {
-        $user = app('Illuminate\Contracts\Auth\Guard')->user();
-        $accNuber = $user->ACCNUMBER;
+    public function userNotifications($accN) {
+        $notifications = Notification::where('ACCNUMBER',$accN)->get();
+        return view('notfications')->with('notifications', $notifications)->with('accNumber',$accN);
+    }
 
-        $notfications = Notification::where('ACCNUMBER',$accNuber)->get();
-
-        return view('notfications')->with('notfications', $notfications);
+    public function deleteNotification($id, $accN){
+        Notification::where('NOTIFICATIONID', $id)->delete();
+        $notifications = Notification::where('ACCNUMBER',$accN)->get();
+        return view('notfications')->with('notifications', $notifications);
     }
 }

@@ -12,7 +12,9 @@ class UserController extends Controller
 {
     public function editProfile($id) {
         $user = User::where('id',$id)->first();
-        return view('edit')->with('user', $user);
+        if($user->name == 'admin')
+            return view('edit')->with('user', $user);
+        return view('editUser')->with('user', $user);
     }
 
     public function viewProfile($id){

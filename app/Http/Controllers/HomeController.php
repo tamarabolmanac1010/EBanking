@@ -31,6 +31,7 @@ class HomeController extends Controller
         if($name === 'admin'){
             return view('homeAdmin');
         }
-        return view('home');
+        session(['user' => $user]);
+        return view('home')->with('user',$user );
     }
 }

@@ -7,7 +7,7 @@
 
         $accArray = array();
         foreach ($accounts as $account){
-        $accArray[$account->ACCNUMBER] = $account;
+            $accArray[$account->ACCNUMBER] = $account;
         }?>
 
         {!! Form::select('account',    $accArray, null , ['class' => 'form-control', 'placeholder'=>' Select account ']) !!} <br>

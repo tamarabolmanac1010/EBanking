@@ -17,8 +17,9 @@
                             <thead>
                             <tr>
                                 <th>Account number</th>
-                                <th>Amount</th>
+                                <th>Balance</th>
                                 <th>Type</th>
+                                <th>Notifications</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -28,6 +29,7 @@
                                     <td><?php echo $account->ACCNUMBER; ?></td>
                                     <td><?php echo $account->AMOUNT." EUR"; ?></td>
                                     <td><?php echo $account->accounttype()->TYPE; ?></td>
+                                    <td><a href="{{ url('notifications/'.$account->ACCNUMBER) }}" class="card-link">>></a></td>
                                 </tr>
                                 <?php } ?>
                             </tbody>
@@ -35,7 +37,7 @@
                         </li>
                     </ul>
                      <div class="card-body">
-                         <a href="edit/" class="card-link">Edit profile</a>
+                         <a href="{{ url('edit/'.$user->id) }}" class="card-link">Edit profile</a>
                     </div>
                     @if (session('status'))
                         <div class="alert alert-success">

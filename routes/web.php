@@ -29,7 +29,9 @@ Route::get('newNotification', 'NotificationController@newNotification');
 
 Route::post('notification', 'NotificationController@createNotification');
 
-Route::get('notifications', 'NotificationController@userNotifications');
+Route::get('notifications/{accN}', 'NotificationController@userNotifications');
+
+Route::get('deleteNotification/{id}/{accN}', 'NotificationController@deleteNotification');
 
 Route::get('edit/{id}', 'UserController@editProfile');
 

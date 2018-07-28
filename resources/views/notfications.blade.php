@@ -20,7 +20,7 @@
         <tr>
             <td><?php echo $notification->TITLE; ?></td>
             <td><?php echo $notification->TEXT ?></td>
-            <td><?php echo ">>" ?></td>
+            <td><a href="{{ url('deleteNotification/'.$notification->NOTIFICATIONID.'/'.$accNumber) }}" class="card-link">>></a></td>
         </tr>
         <?php } ?>
         <?php } ?>

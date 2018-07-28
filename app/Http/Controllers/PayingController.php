@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Auth;
 
 use App\Accounttype;
 use App\Account;
@@ -48,7 +49,8 @@ class PayingController extends Controller
 
     public function index()
     {
-        $accounts =  Account::all();
+        $id = Auth::user()->id;
+        $accounts =  Account::where('USER_ID',$id)->get();
         return view('pay')->with('accounts', $accounts);
     }
 

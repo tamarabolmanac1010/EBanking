@@ -25,7 +25,8 @@
     <?php echo e(Form::close());?>
 
     <?php if(!empty($transactions)) {?>
-    <?php echo "Current time ".$current; ?>
+
+    <li class="list-group-item">Balance: </li>
         <table data-toggle="table" id="accounts">
             <thead>
             <tr>
