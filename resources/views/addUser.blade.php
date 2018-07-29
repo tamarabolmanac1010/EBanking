@@ -1,12 +1,8 @@
 @extends('layouts.appAdmin')
-@section('content')
 
+@section('content')
     <h1> Write notification </h1>
     <br>
-    <br>
-    <?php echo (Form::open(array('url' => 'notification')));?>
-
-
     <?php echo (Form::open(array('url' => 'notification')))?>
     <?php
     $accArray = array();
@@ -28,8 +24,5 @@
     <div>
         {{Form::submit('Send', ['class' => 'btn btn-primary'])}}
     </div>
-    <?php echo (Form::close()); ?>
-
-
-
+    <?php echo e(Form::close()); ?>
 @endsection

@@ -18,7 +18,7 @@ class AdminController extends Controller
     }
 
     public function addUser(){
-        return view('auth.register');
+        return view('addUser');
     }
 
     public function users()

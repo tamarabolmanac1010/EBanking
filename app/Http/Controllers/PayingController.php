@@ -51,7 +51,8 @@ class PayingController extends Controller
     {
         $id = Auth::user()->id;
         $accounts =  Account::where('USER_ID',$id)->get();
-        return view('pay')->with('accounts', $accounts);
+        $willShow = true;
+        return view('pay')->with('accounts', $accounts)->with('willShow', $willShow);
     }
 
 }

@@ -9,16 +9,14 @@
             <li class="{{Request::is('homeAdmin') ? 'active' : ''}}">
                 <a class="nav-link" href="/homeAdmin">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li  class="{{Request::is('add') ? 'active' : ''}}">
-                <a class="nav-link disabled" href="/add">Add user</a>
+            <li class="{{Request::is('homeAdmin') ? 'active' : ''}}">
+                <a class="nav-link" href="/newNotification">New notification <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Information</a>
-                <div class="dropdown-menu" aria-labelledby="dropdown01">
-                    <a class="dropdown-item" href="/newNotification">New notification </a>
-                    <a class="dropdown-item" href="/transactions">Sent notifications</a>
-                    <a class="dropdown-item" href="/users">Users data</a>
-                </div>
+            <li class="{{Request::is('homeAdmin') ? 'active' : ''}}">
+                <a class="nav-link" href="/sentNotifications">Sent notifications <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="{{Request::is('homeAdmin') ? 'active' : ''}}">
+                <a class="nav-link" href="/users">Users data <span class="sr-only">(current)</span></a>
             </li>
         </ul>
 
