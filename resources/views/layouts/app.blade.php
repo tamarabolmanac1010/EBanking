@@ -24,6 +24,14 @@
             background-color: #fff;
             color: #000000;
         }
+
+
+
+        body {
+            background-color: #8080ff;
+            background-image: url("http://backgroundcheckall.com/wp-content/uploads/2017/12/blue-circle-background-9.jpg");
+        }
+
     </style>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

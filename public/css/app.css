@@ -77,7 +77,10 @@ body {
   line-height: 1.6;
   color: #212529;
   text-align: left;
-  background-color: #ffffff;
+  background-color: #1b6d85;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("https://orig00.deviantart.net/7ba1/f/2012/245/a/8/aqua_blue_abstract_by_13br3tt13-d5d9shn.png");
 }
 
 [tabindex="-1"]:focus {
@@ -179,7 +182,7 @@ sup {
 
 a {
   color: #007bff;
-  text-decoration: none;
+  text-decoration: dotted;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
@@ -239,13 +242,14 @@ table {
 caption {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-  color: #6c757d;
+  color: #9BA2AB;
   text-align: left;
   caption-side: bottom;
 }
 
 th {
   text-align: inherit;
+  font-size: 0.9rem;
 }
 
 label {
@@ -1968,7 +1972,7 @@ pre code {
 .table-borderless td,
 .table-borderless thead th,
 .table-borderless tbody + tbody {
-  border: 0;
+  border: 1;
 }
 
 .table-striped tbody tr:nth-of-type(odd) {
@@ -2218,15 +2222,33 @@ pre code {
 }
 
 .form-control {
+   display: block;
+   width: 100%;
+   padding: 0.375rem 0.75rem;
+   font-size: 1.3rem;
+   line-height: 1.6;
+   color: #495057;
+   background-color: white;
+   background-clip: padding-box;
+   border: 2px solid #17a2b8;
+   border-radius: 0.25rem;
+   -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+   transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+ }
+
+
+.form-control2 {
   display: block;
-  width: 100%;
+  width: 50%;
   padding: 0.375rem 0.75rem;
-  font-size: 0.9rem;
+  font-size: 1.3rem;
   line-height: 1.6;
   color: #495057;
-  background-color: #fff;
+  background-color: white;
   background-clip: padding-box;
-  border: 1px solid #ced4da;
+  border: 2px solid #17a2b8;
   border-radius: 0.25rem;
   -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
   transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
@@ -5104,6 +5126,7 @@ input[type="button"].btn-block {
 .card-header {
   padding: 0.75rem 1.25rem;
   margin-bottom: 0;
+  font-size: 1.3rem;
   background-color: rgba(0, 0, 0, 0.03);
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
@@ -10366,6 +10389,13 @@ a.text-dark:focus {
 
   body {
     min-width: 992px !important;
+    background-color: #005cbf;
+    backgtound-image: url("https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwit04n4l_zcAhVFzaQKHUuDCXUQjRx6BAgBEAU&url=http%3A%2F%2Fbackgroundcheckall.com%2Fblue-circle-background-9%2F&psig=AOvVaw3fjoD1uO9ogYQkhZKONJcf&ust=1534873546771962");
+  }
+
+
+  html {
+    background-image: url("https://i.ytimg.com/vi/gKIFk8BJsDc/maxresdefault.jpg");
   }
 
   .container {
@@ -10387,6 +10417,7 @@ a.text-dark:focus {
   .table td,
   .table th {
     background-color: #fff !important;
+
   }
 
   .table-bordered th,

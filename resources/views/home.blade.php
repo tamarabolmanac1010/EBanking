@@ -5,11 +5,11 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card ">
-                <div class="card-header">Welcome<b> <?php echo Auth::user()->name ?></b></div>
+                <div class="card-header">Welcome<b> <?php echo Auth::user()->name ?></b><br>
+                    E mail:      <b font-size="1.2rem"><?php echo Auth::user()->email ?></b><br></div>
 
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><b>E mail:      </b><?php echo Auth::user()->email ?><br></li>
-                        <li class="list-group-item">Active accounts:</li>
+                        <li class="list-group-item">  Active accounts: </li>
                         <li class="list-group-item">
                         <?php
                         $accounts  = Auth::user()->accounts;?>

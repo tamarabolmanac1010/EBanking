@@ -10,18 +10,18 @@
             $accArray[$account->ACCNUMBER] = $account;
         }?>
 
-        {!! Form::select('account',    $accArray, null , ['class' => 'form-control', 'placeholder'=>' Select account ']) !!} <br>
+        {!! Form::select('account',    $accArray, null , ['class' => 'form-control2', 'placeholder'=>' Select account ']) !!} <br>
         <div class="form-group">
             <?php echo e(Form::label('amount', 'Amount')); ?>
-            <?php echo Form::text('amount', '', ['class' => 'form-control', 'placeholder' => 'Enter amount']);?>
+            <?php echo Form::text('amount', '', ['class' => 'form-control2', 'placeholder' => 'Enter amount']);?>
         </div>
         <div class="form-group">
             <?php echo e(Form::label('account', 'Account number')); ?>
-            <?php echo Form::text('accountTo', '', ['class' => 'form-control', 'placeholder' => 'Enter account number']);?>
+            <?php echo Form::text('accountTo', '', ['class' => 'form-control2', 'placeholder' => 'Enter account number']);?>
         </div>
         <div class="form-group">
             <?php echo e(Form::label('email', 'E-Mail Address')); ?>
-            <?php echo Form::text('email', '', ['class' => 'form-control', 'placeholder' => 'Enter e-mail']);?>
+            <?php echo Form::text('email', '', ['class' => 'form-control2', 'placeholder' => 'Enter e-mail']);?>
         </div>
 
     <div>

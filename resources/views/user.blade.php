@@ -8,7 +8,7 @@
                     <div class="card-header">Welcome<b> <?php echo $user->name ?></b></div>
 
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><b>E mail:      </b><?php echo $user->email ?><br></li>
+                        <li class="list-group-item">E mail:<b><?php echo $user->email ?> </b></li>
                         <li class="list-group-item">Active accounts:</li>
                         <li class="list-group-item">
                             <?php

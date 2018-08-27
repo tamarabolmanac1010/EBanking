@@ -19,8 +19,11 @@ Route::get('/homeAdmin', function () {
 
 Route::get('transactions', 'TransactionController@index');
 
+Route::get('transfer', 'TransactionController@transferAmount');
+
 Route::post('submit', 'TransactionController@submit');
 
+Route::post('executeTransfer', 'TransactionController@executeTransfer');
 
 Route::get('pay', 'PayingController@index');
 

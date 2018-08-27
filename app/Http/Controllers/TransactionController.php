@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Input;
 
 use App\Transaction;
 use App\Account;
+use Illuminate\Support\Facades\DB;
 
 use DateTime;
 use Carbon\Carbon;
@@ -23,34 +24,37 @@ class TransactionController extends Controller
         return view('transactions')->with('accounts', $accounts);
     }
 
-    public function create()
-    {
-        //
+    public function transferAmount() {
+        $user = app('Illuminate\Contracts\Auth\Guard')->user();
+        $id = Auth::user()->id;
+        $accounts = Account::where('USER_ID',"!=", $id)->get();
+        $accountsUser = Account::where('USER_ID', $id)->get();
+        return view('transfer')->with('user', $user)->with('accounts', $accounts )->with('accountsUser', $accountsUser );
     }
 
-    public function store(Request $request)
-    {
-        //
-    }
+    public function executeTransfer() {
+        $amount = Input::get('amount');
+        $accountTo = Input::get('account');
+        $accountFrom = Input::get('accountUser');
 
-    public function show($id)
-    {
+        $accountToAmount = Account::where('ACCNUMBER', $accountTo )->first()->AMOUNT;
+        $accountToNewAmount = $accountToAmount + $amount;
+        $accountFromAmount = Account::where('ACCNUMBER', $accountFrom )->first()->AMOUNT - $amount;
+        $accountFromNewAmount = $accountFromAmount - $amount;
 
-    }
+        if($accountFromAmount < 0) {
+            return view('/transfer')->with('success', 'Transfer aborted! Not enough balance on selected account');
+        }
 
-    public function edit($id)
-    {
-        //
-    }
+        DB::table('accounts')
+            ->where('ACCNUMBER', $accountTo)
+            ->update(['AMOUNT' => $accountToNewAmount]);
 
-    public function update(Request $request, $id)
-    {
-        //
-    }
+        DB::table('accounts')
+            ->where('ACCNUMBER', $accountFrom)
+            ->update(['AMOUNT' => $accountFromNewAmount]);
 
-    public function destroy($id)
-    {
-        //
+        return view('/transfer')->with('success', 'Transfer is executed successfully');
     }
 
     public function submit(Request $request){
