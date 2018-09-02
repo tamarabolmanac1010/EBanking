@@ -3,7 +3,7 @@
 @section('content')
     <h1> Make a new payment </h1>
     <br>
-    <?php echo e(Form::open(array('url' => 'payment')));
+    <?php echo e(Form::open(array('url' => 'payment', 'onsubmit' => 'return confirm("Confirm payment?")')));
 
         $accArray = array();
         foreach ($accounts as $account){
@@ -25,7 +25,7 @@
         </div>
 
     <div>
-        {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
+        {{Form::submit('Submit', ['class' => 'btn btn-primary btn-lg'])}}
     </div>
     <?php echo e(Form::close()); ?>
 

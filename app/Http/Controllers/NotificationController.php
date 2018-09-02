@@ -9,6 +9,8 @@ use App\Account;
 use App\User;
 use App\Notification;
 
+use App\Http\Middleware\LogedUser;
+
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 

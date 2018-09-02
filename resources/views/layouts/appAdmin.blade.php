@@ -15,6 +15,8 @@
 
         #accounts tr:nth-child(even){background-color: #f2f2f2;}
 
+        #accounts tr:nth-child(odd){background-color: #a6a6a6;}
+
         #accounts tr:hover {background-color: #ddd;}
 
         #accounts th {
@@ -23,6 +25,7 @@
             text-align: left;
             background-color: #fff;
             color: #000000;
+            font-size: 20px;
         }
     </style>
     <meta charset="utf-8">

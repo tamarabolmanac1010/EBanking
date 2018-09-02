@@ -5,8 +5,8 @@
     <div class="row">
         <div class="col-sm-6">
             <div class="card ">
-                <div class="card-header">Welcome to E banking <br> User: <b> <?php echo Auth::user()->name ?></b><br>
-                    E mail:      <b font-size="1.2rem"><?php echo Auth::user()->email ?></b><br></div>
+                <div class="card-header">Welcome to E banking <br> User: <b> <?php echo $user->name ?></b><br>
+                    E mail:      <b font-size="1.2rem"><?php echo $user->email ?></b><br></div>
 
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
@@ -14,7 +14,7 @@
                         <h4 style="text-align:center;"> Active accounts</h4>
                         <br>
                         <?php
-                        $accounts  = Auth::user()->accounts;?>
+                        $accounts  = $user->accounts;?>
                         <table data-toggle="table" id="accounts" style="text-align:left;">
                             <thead>
                             <tr>

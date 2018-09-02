@@ -61,34 +61,6 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="account" class="col-md-4 col-form-label text-md-right">{{ __('Account number') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="account" type="text" class="form-control{{ $errors->has('account') ? ' is-invalid' : '' }}" name="account" value="{{ old('account') }}" required autofocus>
-
-                                @if ($errors->has('account'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('account') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="type" class="col-md-4 col-form-label text-md-right">{{ __('Account type') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="account" type="type" class="form-control{{ $errors->has('account') ? ' is-invalid' : '' }}" name="type" value="{{ old('type') }}" required autofocus>
-
-                                @if ($errors->has('type'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('type') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">

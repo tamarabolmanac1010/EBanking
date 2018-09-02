@@ -3,6 +3,13 @@
 
     <h1> Users </h1>
 
+    <form action='searchUser' method='GET' class="form-inline ml-auto">
+        <div class="md-form my-0">
+            <input class="form-control" name = 'searchName' type="text" placeholder="Search" aria-label="Search">
+        </div>
+        <button href="searchUser" class="btn btn-outline-white btn-md my-0 ml-sm-2" type="submit">Search</button>
+    </form>
+
     <br>
 
     <?php if(!empty($users)) {?>
@@ -16,11 +23,11 @@
         </thead>
         <tbody>
         <?php
-        foreach ($users as $user) {?>
+        foreach ($users as $us) {?>
         <tr>
-            <td><?php echo $user->name; ?></td>
-            <td><?php echo $user->email ?></td>
-            <td> <a href="{{ url('view/'.$user->id) }}" class="card-link">>></a> </td>
+            <td><?php echo $us->name; ?></td>
+            <td><?php echo $us->email ?></td>
+            <td> <a href="{{ url('view/'.$us->id) }}" class="card-link badge-primary">>></a> </td>
         </tr>
         <?php } ?>
         <?php } ?>

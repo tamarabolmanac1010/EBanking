@@ -14,11 +14,11 @@
         $accArray[$account->ACCNUMBER] = $account;
     }?>
 
-    {!! Form::select('account',    $accArray, null , ['class' => 'form-control', 'placeholder'=>' Select account ']) !!} <br>
+    {!! Form::select('account',    $accArray, null , ['class' => 'form-control2', 'placeholder'=>' Select account ']) !!} <br>
 
     <div class="form-group">
         <?php echo e(Form::label('title', 'Title')); ?>
-        <?php echo Form::text('title', '', ['class' => 'form-control', 'placeholder' => 'Enter notification title']);?>
+        <?php echo Form::text('title', '', ['class' => 'form-control2', 'placeholder' => 'Enter notification title']);?>
     </div>
     <div class="form-group">
         <?php echo e(Form::label('text', 'Text')); ?>

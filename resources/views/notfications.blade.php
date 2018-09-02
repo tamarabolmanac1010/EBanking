@@ -20,7 +20,7 @@
         <tr>
             <td><?php echo $notification->TITLE; ?></td>
             <td><?php echo $notification->TEXT ?></td>
-            <td><a href="{{ url('deleteNotification/'.$notification->NOTIFICATIONID.'/'.$accNumber) }}" class="card-link">>></a></td>
+            <td> <a href="{{ url('deleteNotification/'.$notification->NOTIFICATIONID.'/'.$accNumber) }}" class="badge badge-primary" onclick="return  confirm('Do you want to delete notification Y/N')"> Delete </a></td>
         </tr>
         <?php } ?>
         <?php } ?>

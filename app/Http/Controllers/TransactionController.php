@@ -42,8 +42,8 @@ class TransactionController extends Controller
         $accountFromAmount = Account::where('ACCNUMBER', $accountFrom )->first()->AMOUNT - $amount;
         $accountFromNewAmount = $accountFromAmount - $amount;
 
-        if($accountFromAmount < 0) {
-            return view('/transfer')->with('success', 'Transfer aborted! Not enough balance on selected account');
+        if($accountFromAmount <= 0) {
+            return view('/transfer')->with('success', "F");
         }
 
         DB::table('accounts')
@@ -54,7 +54,7 @@ class TransactionController extends Controller
             ->where('ACCNUMBER', $accountFrom)
             ->update(['AMOUNT' => $accountFromNewAmount]);
 
-        return view('/transfer')->with('success', 'Transfer is executed successfully');
+        return view('/transfer')->with('success', "T");
     }
 
     public function submit(Request $request){

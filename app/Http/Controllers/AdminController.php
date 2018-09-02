@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Account;
 
 class AdminController extends Controller
 {
@@ -18,7 +19,8 @@ class AdminController extends Controller
     }
 
     public function addUser(){
-        return view('addUser');
+        $accounts = Account::all();
+        return view('addUser')->with("accounts", $accounts);
     }
 
     public function users()

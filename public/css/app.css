@@ -2881,7 +2881,7 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #007bff;
+  background-color: #19334d;
   border-color: #007bff;
 }
 
@@ -5127,6 +5127,7 @@ input[type="button"].btn-block {
   padding: 0.75rem 1.25rem;
   margin-bottom: 0;
   font-size: 1.3rem;
+  text-align: center;
   background-color: rgba(0, 0, 0, 0.03);
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
@@ -5522,7 +5523,7 @@ input[type="button"].btn-block {
 
 .badge-primary {
   color: #fff;
-  background-color: #007bff;
+  background-color: #19334d;
 }
 
 .badge-primary[href]:hover,
@@ -5639,6 +5640,7 @@ input[type="button"].btn-block {
   position: relative;
   padding: 0.75rem 1.25rem;
   margin-bottom: 1rem;
+  width: 50%;
   border: 1px solid transparent;
   border-radius: 0.25rem;
 }

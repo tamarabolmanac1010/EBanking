@@ -6,7 +6,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
 use App\User;
+use App\Account;
 use Illuminate\Support\Facades\DB;
+
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -20,7 +23,7 @@ class UserController extends Controller
 
     public function viewProfile($id){
         $user = User::where('id',$id)->first();
-        return view('user')->with('user', $user);
+        return view('userView')->with('user', $user);
     }
 
     public function saveChanges(Request $request) {
@@ -44,6 +47,43 @@ class UserController extends Controller
         return view('user')->with('user', $user);
     }
 
-    public function saveNewUser() {
+    public function registerUser(Request $request){
+
+        $username = Input::get('username');
+        $password = Input::get('password');
+        $email = Input::get('email');
+
+        $user = User::create([
+            'name' => $username,
+            'email' => $email,
+            'password' => Hash::make($password),
+        ]);
+
+        $accNumber = Input::get('accNumber');
+        $accType = Input::get('accType');
+
+        if(Input::get('onlyProfile') == false){
+
+            if($accType == 'C')
+                $accTypeId = 1;
+            else
+                $accTypeId = 2;
+
+            Account::create([
+                'ACCNUMBER' => (int)$accNumber,
+                'ACTYPEID' => $accTypeId,
+                'AMOUNT'=> 0,
+                'USER_ID' => $user->id,
+            ]);
+        }
+
+        $users = User::all();
+        return view('users')->with('users', $users);
+    }
+
+    public function searchUser(Request $request){
+        $name = $request->input('searchName');
+        $users = User::where('name', 'LIKE', '%'.$name.'%')->get();
+        return view('users')->with('users', $users);
     }
 }

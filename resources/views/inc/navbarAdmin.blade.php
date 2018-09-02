@@ -18,6 +18,9 @@
             <li class="{{Request::is('homeAdmin') ? 'active' : ''}}">
                 <a class="nav-link" href="/users">Users data <span class="sr-only">(current)</span></a>
             </li>
+            <li class="{{Request::is('homeAdmin') ? 'active' : ''}}">
+                <a class="nav-link" href="/addUser">Add user <span class="sr-only">(current)</span></a>
+            </li>
         </ul>
 
         <!-- Right Side Of Navbar -->
