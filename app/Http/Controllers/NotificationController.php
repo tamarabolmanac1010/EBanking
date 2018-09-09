@@ -44,7 +44,7 @@ class NotificationController extends Controller
 
     public function userNotifications($accN) {
         $notifications = Notification::where('ACCNUMBER',$accN)->get();
-        return view('notfications')->with('notifications', $notifications)->with('accNumber',$accN);
+        return view('home')->with('notifications', $notifications)->with('accNumber',$accN);
     }
 
     public function deleteNotification($id, $accN){

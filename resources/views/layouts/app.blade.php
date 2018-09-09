@@ -2,22 +2,30 @@
 <html lang="{{ app()->getLocale() }}">
 <head>
 
-
     <style>
         #accounts {
             font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
             border-collapse: collapse;
             width: 100%;
+            border: 5px ;
+            border-radius: 15px 15px 15px 15px;
         }
 
+        #accounts td, #accounts th {
 
-
-        #accountsv td, #accounts th {
-
-            padding: 8px;
+            padding-left: 20px;
+            left: 70px;
+            font-size: 18px;
         }
 
-        #accounts tr:nth-child(even){background-color: #f2f2f2;}
+        #accounts tr:nth-child(even){background-color: rgba(242, 242, 242, 0.7);
+            height:40px;
+            padding-left: 20px;
+        }
+
+        #accounts tr:nth-child(odd){background-color:rgba(166, 166, 166, 0.7);
+            height:40px;
+            left: 20px;}
 
         #accounts tr:hover {background-color: #ddd;}
 
@@ -27,15 +35,8 @@
             text-align: left;
             background-color: #fff;
             color: #000000;
+            font-size: 20px;
         }
-
-
-
-        body {
-            background-color: #8080ff;
-            background-image: url("http://backgroundcheckall.com/wp-content/uploads/2017/12/blue-circle-background-9.jpg");
-        }
-
     </style>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

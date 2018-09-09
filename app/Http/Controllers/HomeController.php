@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Contracts\Auth\Guard;
 
+use GuzzleHttp\Client;
+
 class HomeController extends Controller
 {
     /**
@@ -31,7 +33,29 @@ class HomeController extends Controller
         if($name === 'admin'){
             return view('homeAdmin');
         }
+
+        $client = new Client();
+        $res = $client->request('GET', 'http://data.fixer.io/api/latest?access_key=6c134b553eb0cba8825b0970c84652a9');
+        /*, [
+            'form_params' => [
+                'client_id' => 'test_id',
+                'secret' => 'test_secret',
+            ]
+        ]);*/
+        //echo $res->getStatusCode();
+        // "200"
+        //echo $res->getHeader('content-type');
+        // 'application/json; charset=utf8'
+        $result = $res->getBody();
+        $json_a = json_decode($result, true);
+        $EUR =  $json_a["rates"]["EUR"];
+        $GBP =  $json_a["rates"]["GBP"];
+        $AUD =  $json_a["rates"]["AUD"];
+        $USD =  $json_a["rates"]["USD"];
+        $CAD =  $json_a["rates"]["CAD"];
+        $RSD =  $json_a["rates"]["RSD"];
+
         session(['user' => $user]);
-        return view('home')->with('user',$user );
+        return view('home')->with('user',$user )->with('GBP', $GBP)->with('AUD', $AUD)->with('USD', $USD)->with('CAD', $CAD)->with('RSD', $RSD);
     }
 }

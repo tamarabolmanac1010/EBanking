@@ -11,6 +11,8 @@
 |
 */
 
+Route::get('useAPI','TransactionController@useAPI');
+
 Route::group(['middleware' => ['authorization']], function () {
 
 

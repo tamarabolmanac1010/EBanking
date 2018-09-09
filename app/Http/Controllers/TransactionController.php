@@ -14,6 +14,8 @@ use Carbon\Carbon;
 
 use Illuminate\Support\Facades\Auth;
 
+use GuzzleHttp\Client;
+
 class TransactionController extends Controller
 {
 
@@ -72,5 +74,30 @@ class TransactionController extends Controller
 
         $accounts =  Account::all();
         return view('transactions')->with('transactions', $transactions)->with('accounts', $accounts)->with('current', $month);
+    }
+
+    public function useAPI() {
+        $client = new Client();
+        $res = $client->request('GET', 'http://data.fixer.io/api/latest?access_key=6c134b553eb0cba8825b0970c84652a9');
+        /*, [
+            'form_params' => [
+                'client_id' => 'test_id',
+                'secret' => 'test_secret',
+            ]
+        ]);*/
+        //echo $res->getStatusCode();
+        // "200"
+        //echo $res->getHeader('content-type');
+        // 'application/json; charset=utf8'
+        $result = $res->getBody();
+        $json_a = json_decode($result, true);
+        $EUR =  $json_a["rates"]["EUR"];
+        $GBP =  $json_a["rates"]["GBP"];
+        $AUD =  $json_a["rates"]["AUD"];
+        echo $EUR."   ".$AUD."    ".$GBP;
+
+
+        //echo $jsonSubstr;
+        // {"type":"User"...'
     }
 }

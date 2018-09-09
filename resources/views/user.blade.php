@@ -4,6 +4,8 @@
 
     <div class="row">
         <div class="col-sm-6">
+
+
             <div class="card ">
                 <div class="card-header">Welcome to E banking <br> User: <b> <?php echo Auth::user()->name ?></b><br>
                     E mail:      <b font-size="1.2rem"><?php echo Auth::user()->email ?></b><br></div>
@@ -15,14 +17,12 @@
                         <br>
                         <?php
                         $accounts  = Auth::user()->accounts;?>
-                        <table data-toggle="table" id="accounts" style="text-align:left;">
+                        <table data-toggle="table" id="accounts" >
                             <thead>
                             <tr>
                                 <th>Account number</th>
                                 <th>Balance</th>
-                                <th>Type</th>
-                                <th>Notifications</th>
-                            </tr>
+                                <th>Type</th> </tr>
                             </thead>
                             <tbody>
                             <?php
@@ -38,6 +38,8 @@
                         </table>
                     </li>
                 </ul>
+
+
                 <div class="card-body">
                     <a href="{{ url('edit/'.$user->id) }}" class="card-link">Edit profile</a>
                 </div>
@@ -48,12 +50,14 @@
                 @endif
             </div>
 
+
+
         </div>
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional cjjjjjontent.</p>
                     <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>

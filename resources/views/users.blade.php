@@ -18,17 +18,15 @@
         <tr>
             <th>Name</th>
             <th>E mail</th>
-            <th>Profile view</th>
         </tr>
         </thead>
         <tbody>
         <?php
         foreach ($users as $us) {?>
-        <tr>
-            <td><?php echo $us->name; ?></td>
-            <td><?php echo $us->email ?></td>
-            <td> <a href="{{ url('view/'.$us->id) }}" class="card-link badge-primary">>></a> </td>
-        </tr>
+            <tr>
+                <td> <a href="{{ url('view/'.$us->id) }}" class="card-link badge-primary  colorLink"><?php echo $us->name; ?></a></td>
+                <td><?php echo $us->email ?></td>
+            </tr>
         <?php } ?>
         <?php } ?>
         </tbody>
